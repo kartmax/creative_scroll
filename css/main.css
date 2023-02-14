@@ -1,0 +1,164 @@
+/* USER VARIABLES SECTION */
+
+:root {
+	--accent: orange;
+	--fontsize: 16px;
+	--textcolor: #333;
+	--lineheight: 1.6;
+	--userfont: raleway-st, sans-serif;
+	--userfont_2: outfit-st, sans-serif;
+	--systemfont: -apple-system, BlinkMacSystemFont, Arial, sans-serif;
+
+   --index: calc(1vw + 1vh);
+   --color-header: #f4efec;
+   --color-text: #cdc6c3;
+   --gap-gallery: calc(var(--index) * 5);
+}
+
+/* BOOTSTRAP SETTINGS SECTION */
+
+/* gutter 20px (10px + 10px). Comment this code for default gutter start at 1.5rem (24px) wide. */
+.container, .container-fluid, .container-lg, .container-md, .container-sm, .container-xl, .container-xxl { --bs-gutter-x: .625rem; }
+.row, .row > * { --bs-gutter-x: 1.25rem; }
+
+/* FONTS LOAD SECTION */
+
+/* @font-face { src: url("../fonts/roboto-regular-webfont.woff2") format("woff2"); font-family: "roboto-st"; font-weight: 400; font-style: normal; }
+@font-face { src: url("../fonts/roboto-italic-webfont.woff2") format("woff2"); font-family: "roboto-st"; font-weight: 400; font-style: italic; }
+@font-face { src: url("../fonts/roboto-bold-webfont.woff2") format("woff2"); font-family: "roboto-st"; font-weight: 700; font-style: normal; }
+@font-face { src: url("../fonts/roboto-bolditalic-webfont.woff2") format("woff2"); font-family: "roboto-st"; font-weight: 700; font-style: italic; } */
+
+@font-face { src: url("../fonts/raleway-regular.woff2") format("woff2"); font-family: "raleway-st"; font-weight: 400; font-style: normal; }
+@font-face { src: url("../fonts/outfit-regular.woff2") format("woff2"); font-family: "outfit-st"; font-weight: 400; font-style: normal; }
+
+/* GENERAL CSS SETTINGS */
+
+::placeholder { color: #666; }
+::selection { background-color: var(--accent); color: #fff; }
+input, textarea { outline: none; }
+input:focus:required:invalid, textarea:focus:required:invalid { border-color: red; }
+input:required:valid, textarea:required:valid { border-color: green; }
+
+/* scrollbar */
+::-webkit-scrollbar {
+   width: 0.6rem;
+   background-color: hsl(19, 8%, 75%);
+   background-color: #211D20;
+}
+::-webkit-scrollbar-thumb {
+   border-radius: .5rem;
+   background-color: hsl(19, 8%, 65%);
+}
+::-webkit-scrollbar-thumb:hover {
+   background-color: hsl(19, 8%, 55%);
+}
+
+body {
+	font-family: var(--userfont);
+	font-size: var(--fontsize);
+	line-height: var(--lineheight);
+	color: var(--color-text);
+	min-width: 320px;
+	position: relative;
+	overflow-x: hidden;
+
+   background-image: url(../images/bg.jpg);
+   background-size: 50px;
+}
+
+/* USER STYLES */
+
+.image {
+	max-width: 100%;
+	margin-bottom: var(--bs-gutter-x);
+	border-radius: 4px;
+}
+
+.accent {
+	color: var(--accent);
+	font-weight: bold;
+}
+
+h1, h2, h3, h4, h5, h6 {
+   font-family: var(--userfont_2);
+   color: var(--color-header);
+}
+
+/* container */
+.container {
+   padding: 0 10vw;
+}
+
+/* hero-section */
+.hero-section {
+   position: relative;
+   min-height: 100vh;
+}
+
+.hero-img {
+   width: calc(var(--index) * 35);
+   position: absolute;
+   z-index: -1;
+   right: 5vw;
+   top: 10vh;
+}
+
+.main-title {
+   color: #fafafa;
+   font-size: calc(var(--index) * 8);
+   line-height: .9;
+   position: absolute;
+   top: 40%;
+   width: min-content;
+}
+
+/* whill-change */
+.content-scroll, 
+.hero-img,
+.gallery__part {
+   will-change: transform;
+}
+
+/* portfolio */
+.gallery {
+   display: flex;
+   padding-block: calc(var(--index) * 8);
+}
+
+.gallery__part {
+   flex: 1;
+   display: flex;
+   align-items: center;
+   flex-direction: column;
+}
+
+.gallery__item {
+   max-width: calc(var(--index) * 21);
+   margin-bottom: var(--gap-gallery);
+   border-radius: 8px;
+   max-height: 90vh;
+}
+
+.gallery__left {
+   margin-top: calc(var(--index) * 13);
+}
+
+.gallery__right .gallery__item {
+   margin-bottom: 0;
+   margin-top: var(--gap-gallery);
+}
+
+
+/* text-block */
+.text-block {
+   position: relative;
+}
+
+.text-block__title {
+   font-size: 2rem;
+   margin-bottom: .7em;
+}
+
+.text-block__description {
+   line-height: 1.75;
+}
